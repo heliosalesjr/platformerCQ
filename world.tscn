@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b7eod6mxifdbx"]
+
+[node name="World" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 319.0
+offset_top = 242.0
+offset_right = 713.0
+offset_bottom = 268.0
+text = "THIS IS THE BEGGINING OF THE REST OF YOUR LIFE!"
