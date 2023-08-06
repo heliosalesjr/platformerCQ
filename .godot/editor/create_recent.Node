@@ -1,5 +1,7 @@
-Node2D
+Label
+CanvasLayer
 CollisionShape2D
+Node2D
 Area2D
 AnimatedSprite2D
 CharacterBody2D
@@ -10,6 +12,5 @@ AnimationPlayer
 Camera2D
 Panel
 StaticBody2D
-Label
 Node
 Button
