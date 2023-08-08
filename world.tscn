@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7eod6mxifdbx"]
+[gd_scene load_steps=13 format=3 uid="uid://b7eod6mxifdbx"]
 
 [ext_resource type="PackedScene" uid="uid://cpj16x1d35ypb" path="res://Player/Player.tscn" id="1_mg8gw"]
 [ext_resource type="Texture2D" uid="uid://b2fd3lpo1x6j5" path="res://Sunny-land-assets-files/PNG/environment/layers/tileset.png" id="1_wenik"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjpjwythspmrk" path="res://sunny-land/assets/environment/middle.png" id="5_r17t4"]
 [ext_resource type="PackedScene" uid="uid://cybb51sh60yb" path="res://Frog.tscn" id="7_g8hy3"]
 [ext_resource type="Script" path="res://Hp.gd" id="8_k31ss"]
+[ext_resource type="PackedScene" uid="uid://cutsbqcjmccce" path="res://Cherry.tscn" id="9_0uj2a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5an1f"]
 texture = ExtResource("1_wenik")
@@ -418,7 +419,7 @@ sources/0 = SubResource("TileSetAtlasSource_5an1f")
 [sub_resource type="GDScript" id="GDScript_nux7l"]
 script/source = "extends Label
 
-func _process(delta):
+func _process(_delta):
 	text = \"Gold: \" + str(Game.Gold)
 "
 
@@ -497,19 +498,19 @@ position = Vector2(293, 164)
 position = Vector2(28, 34)
 
 [node name="Frog" parent="Mobs" instance=ExtResource("7_g8hy3")]
-position = Vector2(187, 350)
+position = Vector2(1117, 309)
 
 [node name="Frog2" parent="Mobs" instance=ExtResource("7_g8hy3")]
-position = Vector2(459, 258)
+position = Vector2(1389, 217)
 
 [node name="Frog3" parent="Mobs" instance=ExtResource("7_g8hy3")]
-position = Vector2(525, 307)
+position = Vector2(1455, 266)
 
 [node name="Frog4" parent="Mobs" instance=ExtResource("7_g8hy3")]
-position = Vector2(546, 245)
+position = Vector2(1476, 204)
 
 [node name="Frog5" parent="Mobs" instance=ExtResource("7_g8hy3")]
-position = Vector2(406, 328)
+position = Vector2(1336, 287)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -535,4 +536,17 @@ offset_right = 646.92
 offset_bottom = -32.12
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
+justification_flags = 3
 script = SubResource("GDScript_nux7l")
+
+[node name="Cherry" parent="." instance=ExtResource("9_0uj2a")]
+position = Vector2(125, 373)
+
+[node name="Cherry2" parent="." instance=ExtResource("9_0uj2a")]
+position = Vector2(512, 371)
+
+[node name="Cherry3" parent="." instance=ExtResource("9_0uj2a")]
+position = Vector2(628, 287)
+
+[node name="Cherry4" parent="." instance=ExtResource("9_0uj2a")]
+position = Vector2(771, 351)

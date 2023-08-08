@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://cutsbqcjmccce"]
+
+[ext_resource type="Script" path="res://Cherry.gd" id="1_517wo"]
+[ext_resource type="Texture2D" uid="uid://c7qret7olrixs" path="res://Sunny-land-assets-files/PNG/sprites/cherry/cherry-1.png" id="1_sf0ba"]
+[ext_resource type="Texture2D" uid="uid://dk4lspji8hl5b" path="res://Sunny-land-assets-files/PNG/sprites/cherry/cherry-2.png" id="2_co2r3"]
+[ext_resource type="Texture2D" uid="uid://cq1ewl06ak3ho" path="res://Sunny-land-assets-files/PNG/sprites/cherry/cherry-3.png" id="3_p07pp"]
+[ext_resource type="Texture2D" uid="uid://uecelt7sqktf" path="res://Sunny-land-assets-files/PNG/sprites/cherry/cherry-4.png" id="4_ymxvu"]
+[ext_resource type="Texture2D" uid="uid://pb4lwok4jcfr" path="res://Sunny-land-assets-files/PNG/sprites/cherry/cherry-5.png" id="5_p0l4b"]
+[ext_resource type="Texture2D" uid="uid://durj4j5ecxd2w" path="res://Sunny-land-assets-files/PNG/sprites/cherry/cherry-6.png" id="6_y2g8s"]
+[ext_resource type="Texture2D" uid="uid://cfiiv6adnpes1" path="res://Sunny-land-assets-files/PNG/sprites/cherry/cherry-7.png" id="7_80e23"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v77xb"]
+radius = 9.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uo1ud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sf0ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_co2r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p07pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ymxvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p0l4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y2g8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_80e23")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Cherry" type="Area2D"]
+script = ExtResource("1_517wo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v77xb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 1)
+sprite_frames = SubResource("SpriteFrames_uo1ud")
+animation = &"Idle"
+autoplay = "Idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
