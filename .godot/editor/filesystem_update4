@@ -4,3 +4,4 @@ res://Player/Player.tscn
 res://main.gd
 res://Cherry.gd
 res://Cherry.tscn
+res://Collectables.gd

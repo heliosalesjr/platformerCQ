@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjpjwythspmrk" path="res://sunny-land/assets/environment/middle.png" id="5_r17t4"]
 [ext_resource type="PackedScene" uid="uid://cybb51sh60yb" path="res://Frog.tscn" id="7_g8hy3"]
 [ext_resource type="Script" path="res://Hp.gd" id="8_k31ss"]
-[ext_resource type="PackedScene" uid="uid://cutsbqcjmccce" path="res://Cherry.tscn" id="9_0uj2a"]
+[ext_resource type="Script" path="res://Collectables.gd" id="9_u7nrq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5an1f"]
 texture = ExtResource("1_wenik")
@@ -539,14 +539,11 @@ theme_override_font_sizes/font_size = 25
 justification_flags = 3
 script = SubResource("GDScript_nux7l")
 
-[node name="Cherry" parent="." instance=ExtResource("9_0uj2a")]
-position = Vector2(125, 373)
+[node name="Collectables" type="Node2D" parent="."]
+position = Vector2(1145, 343)
+script = ExtResource("9_u7nrq")
 
-[node name="Cherry2" parent="." instance=ExtResource("9_0uj2a")]
-position = Vector2(512, 371)
+[node name="Timer" type="Timer" parent="Collectables"]
+autostart = true
 
-[node name="Cherry3" parent="." instance=ExtResource("9_0uj2a")]
-position = Vector2(628, 287)
-
-[node name="Cherry4" parent="." instance=ExtResource("9_0uj2a")]
-position = Vector2(771, 351)
+[connection signal="timeout" from="Collectables/Timer" to="Collectables" method="_on_timer_timeout"]
